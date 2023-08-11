@@ -1,9 +1,7 @@
 include {
     path = "../../../common.hcl"
 }
-locals {
-  aws_region = "us-east-2"
-}
+
 terraform {
     source = "https://github.com/kunduso/add-aws-elb-ec2-private-subnet-terraform"
 }
