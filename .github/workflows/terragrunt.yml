@@ -17,20 +17,20 @@ jobs:
       contents: read
     uses: ./.github/workflows/deploy.yml
     with:
-      working-directory: ./environment/dev/us-east-2
+      working-directory: ./environment/dev/us-east-2/infra
       environment: Development
     secrets: inherit
 
-  DeployToTest:
-    name: 'deploy-to-Test'
-    needs: DeployToDev
-    permissions:
-      pull-requests: write
-      id-token: write
-      contents: read
+  # DeployToTest:
+  #   name: 'deploy-to-Test'
+  #   needs: DeployToDev
+  #   permissions:
+  #     pull-requests: write
+  #     id-token: write
+  #     contents: read
 
-    uses: ./.github/workflows/deploy.yml
-    with:
-      working-directory: ./environment/test/us-east-2
-      environment: Test
-    secrets: inherit
+  #   uses: ./.github/workflows/deploy.yml
+  #   with:
+  #     working-directory: ./environment/test/us-east-2/infra
+  #     environment: Test
+  #   secrets: inherit
