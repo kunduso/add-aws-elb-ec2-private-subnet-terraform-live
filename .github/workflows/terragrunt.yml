@@ -17,7 +17,7 @@ jobs:
       contents: read
     uses: ./.github/workflows/deploy.yml
     with:
-      working-directory: ./environment/dev
+      working-directory: ./environment/dev/us-east-2
       environment: Development
     secrets: inherit
 
@@ -31,6 +31,6 @@ jobs:
 
     uses: ./.github/workflows/deploy.yml
     with:
-      working-directory: ./environment/test
+      working-directory: ./environment/test/us-east-2
       environment: Test
     secrets: inherit
