@@ -1,5 +1,5 @@
 include {
-    path = "../../../terragrunt.hcl"
+    path = "../../../common.hcl"
 }
 locals {
   aws_region = "us-east-2"
