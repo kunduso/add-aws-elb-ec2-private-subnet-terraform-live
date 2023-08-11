@@ -68,6 +68,10 @@ jobs:
       id: init
       run: terragrunt init --terragrunt-non-interactive --terragrunt-iam-role "arn:aws:iam::${{ secrets.ACCOUNTNUMBER }}:role/terragrunt-role"
 
+    - name: Run command
+      run: |
+        pwd
+        ls
     # Checks that all Terraform configuration files are correctly written
     - name: Terragrunt Validate
       id: validate
