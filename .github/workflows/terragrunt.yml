@@ -1,0 +1,36 @@
+name: 'Deploy-to-multiple-environments'
+
+on:
+  workflow_dispatch:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "*" ]
+  pull_request:
+    branches: [ "main" ]
+permissions: read-all
+jobs:
+  DeployToDev:
+    name: 'deploy-to-dev'
+    permissions:
+      pull-requests: write
+      id-token: write
+      contents: read
+    uses: ./.github/workflows/deploy.yml
+    with:
+      working-directory: ./environment/dev/us-east-2/infra
+      environment: Development
+    secrets: inherit
+
+  # DeployToTest:
+  #   name: 'deploy-to-Test'
+  #   needs: DeployToDev
+  #   permissions:
+  #     pull-requests: write
+  #     id-token: write
+  #     contents: read
+
+  #   uses: ./.github/workflows/deploy.yml
+  #   with:
+  #     working-directory: ./environment/test/us-east-2/infra
+  #     environment: Test
+  #   secrets: inherit
