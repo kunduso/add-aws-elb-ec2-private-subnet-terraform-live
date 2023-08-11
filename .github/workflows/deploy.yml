@@ -56,7 +56,9 @@ jobs:
       run: terraform --version
     - name: Setup Terraform wrapper path
       run: which terraform
-
+    - name: Run ssh command
+      run: |
+        ssh -T git@github.com
     - name: Setup Terragrunt v0.38.4
       run: |
         sudo wget -q -O /bin/terragrunt "https://github.com/gruntwork-io/terragrunt/releases/download/v0.38.4/terragrunt_linux_amd64"
