@@ -44,7 +44,7 @@ jobs:
       with:
         role-to-assume: ${{ secrets.IAM_ROLE }}
         role-session-name: AWSSession
-        aws-region: us-east-2
+        aws-region: ${{ vars.AWS_REGION }}
 
     # Install the latest version of Terragrunt CLI and configure the Terragrunt CLI configuration file with a Terragrunt Cloud user API token
     - name: Setup Terraform v1.2.6
@@ -56,9 +56,7 @@ jobs:
       run: terraform --version
     - name: Setup Terraform wrapper path
       run: which terraform
-    # - name: Run ssh command
-    #   run: |
-    #     ssh -T git@github.com
+
     - name: Setup Terragrunt v0.38.4
       run: |
         sudo wget -q -O /bin/terragrunt "https://github.com/gruntwork-io/terragrunt/releases/download/v0.38.4/terragrunt_linux_amd64"
@@ -70,10 +68,6 @@ jobs:
       id: init
       run: terragrunt init --terragrunt-non-interactive --terragrunt-iam-role "arn:aws:iam::${{ secrets.ACCOUNTNUMBER }}:role/terragrunt-role"
 
-    - name: Run command
-      run: |
-        pwd
-        ls
     # Checks that all Terraform configuration files are correctly written
     - name: Terragrunt Validate
       id: validate
