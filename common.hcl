@@ -38,7 +38,7 @@ remote_state {
   config = {
     encrypt        = true
     bucket         = "terraform-remote-state-${get_aws_account_id()}"
-    key            = "${path_relative_to_include()}/terraform.tfstate"
+    key            = "add-aws-elb-ec2-private-subnet-terraform-live/${path_relative_to_include()}/terraform.tfstate"
     region         = local.aws_region
     dynamodb_table = "terraform-remote-state-lock-${get_aws_account_id()}"
   }
