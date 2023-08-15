@@ -17,7 +17,7 @@ jobs:
       contents: read
     uses: ./.github/workflows/deploy.yml
     with:
-      working-directory: ./environment/dev/us-east-2
+      working-directory: ./environment/dev/${{ vars.AWS_REGION }}/infra
       environment: Development
     secrets: inherit
 
