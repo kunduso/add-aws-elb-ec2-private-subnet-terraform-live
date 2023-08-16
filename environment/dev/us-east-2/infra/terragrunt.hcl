@@ -3,8 +3,8 @@ include {
 }
 
 terraform {
-    source = "git::https://github.com/kunduso/add-aws-elb-ec2-private-subnet-terraform.git?ref=v1.0"
+    source = "git::https://github.com/kunduso/add-aws-elb-ec2-private-subnet-terraform.git?ref=main"
 }
 inputs = {
-        vpc_cidr = "10.20.20.0/24"
+    vpc_cidr = "10.20.20.0/24"
 }
