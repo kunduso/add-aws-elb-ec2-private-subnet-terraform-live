@@ -1,4 +1,4 @@
-[![Deploy-to-multiple-environments](https://github.com/kunduso/add-aws-elb-ec2-private-subnet-terraform-live/actions/workflows/terragrunt.yml/badge.svg)](https://github.com/kunduso/add-aws-elb-ec2-private-subnet-terraform-live/actions/workflows/terragrunt.yml)
+[![Deploy-to-multiple-environments](https://github.com/kunduso/add-aws-elb-ec2-private-subnet-terraform-live/actions/workflows/terragrunt.yml/badge.svg)](https://github.com/kunduso/add-aws-elb-ec2-private-subnet-terraform-live/actions/workflows/terragrunt.yml) [![checkov-static-analysis-scan](https://github.com/kunduso/add-aws-elb-ec2-private-subnet-terraform-live/actions/workflows/code-scan.yml/badge.svg)](https://github.com/kunduso/add-aws-elb-ec2-private-subnet-terraform-live/actions/workflows/code-scan.yml)
 ![Image](https://skdevops.files.wordpress.com/2023/08/80-image-0.png)
 ## Motivation
 In this note, I demonstrate how to use Terragrunt to deploy the same Terraform configuration code (with environment-specific configurations) across two separate AWS accounts using GitHub Actions. The process can be classified into three high-level steps. These are:
